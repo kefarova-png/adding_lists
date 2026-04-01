@@ -19,12 +19,9 @@ def adding_list_elements(list_1, list_2):
     for n in range(0, min_lenght):
         sum_element = list_1[n] + list_2[n]
         sum_list.append(sum_element)
-    if len(list_1) > len(list_2):
-        for n in range(min_lenght, len(list_1)):
-            sum_list.append(list_1[n])
-    if len(list_2) > len(list_1):
-        for n in range(min_lenght, len(list_2)):
-            sum_list.append(list_2[n])
+    longest_list = max([list_1, list_2], key=len)
+    for n in range(min_lenght, len(longest_list)):
+        sum_list.append(longest_list[n])
     return sum_list
 
 
